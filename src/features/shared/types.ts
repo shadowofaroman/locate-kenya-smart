@@ -18,12 +18,12 @@ export interface AdminUnit {
 
 /** A unit plus its full ancestry, as names. */
 export interface AdminPath {
-  county?: string;
-  constituency?: string;
-  ward?: string;
-  location?: string;
-  sub_location?: string;
-  village?: string;
+  county?: string | undefined;
+  constituency?: string | undefined;
+  ward?: string | undefined;
+  location?: string | undefined;
+  sub_location?: string | undefined;
+  village?: string | undefined;
 }
 
 export type Confidence = "likely" | "needs_confirmation";
@@ -51,14 +51,14 @@ export interface Institution {
 
 /** What the user has confirmed so far. */
 export interface Selection {
-  county?: AdminUnit;
-  constituency?: AdminUnit;
-  ward?: AdminUnit;
-  location?: AdminUnit;
-  sub_location?: AdminUnit;
-  village?: AdminUnit;
+  county?: AdminUnit | undefined;
+  constituency?: AdminUnit | undefined;
+  ward?: AdminUnit | undefined;
+  location?: AdminUnit | undefined;
+  sub_location?: AdminUnit | undefined;
+  village?: AdminUnit | undefined;
   /** Free-typed village / estate when it is not in the reference data. */
-  villageFreeText?: string;
+  villageFreeText?: string | undefined;
   /** Levels that were filled from an AI suggestion rather than picked from data. */
   aiAssistedLevels: AdminLevel[];
 }
